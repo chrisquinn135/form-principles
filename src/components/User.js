@@ -18,8 +18,8 @@ const User = (props) => {
         marginTop: 20
     }
 
-    const recaptchaSite = '6LdS4SAdAAAAAFawTVaZ6T1YjNDhOj5QgVDIy8tc'
-    const recaptchaSecret = '6LdS4SAdAAAAALKNxftnin-N-5Ui5vzOlIu1S4Vn'
+    const recaptchaSite = '6Lel4kkdAAAAAEI-KL3k5bqZR5cbZ7qQ3XD2TaKD'
+    const recaptchaSecret = '6Lel4kkdAAAAAMakUHr8ZCCDyZTlmRvCoKC7i92I'
     const [cap, setCap] = useState(null)
 
     const [lastName, setLastName] = useState("");
