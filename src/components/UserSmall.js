@@ -138,7 +138,7 @@ const UserSmall = (props) => {
                             {!submit ? '' : fnCheck ? '' : firstName.length >= 41 ? <div style={{ color: '#D43434', marginTop: 3 }}>First name must be under 40 letters</div> : !firstName ? <div style={{ color: '#D43434', marginTop: 3 }}>Required*</div> : /^[A-Za-z]+$/.test(firstName) ? <label style={{ fontSize: 13 }}>First</label> : <div style={{ color: '#D43434', marginTop: 3 }}>First name contain use alphabetical characters</div>}                        </div>
                     </div>
                     <div className='row' style={{ marginTop: 10 }}>
-                        <div className='form-group col-md-3'>
+                        <div className='form-group col-6'>
                             <label><b>Title <span style={{ color: '#D43434' }}>*</span></b></label>
                             <select className='form-control' name='title' id='title' onChange={e => {
                                 const test = e.target.value
@@ -162,7 +162,7 @@ const UserSmall = (props) => {
                         </div>
                     </div>
                     <div className='row' style={groupStyle}>
-                        <div className='form-group col-sm-2'>
+                        <div className='form-group col-6'>
                             <label><b>Height</b></label>
                             <select className='form-control' name='feet' id='feet' onChange={e => setFeet(e.target.value)}>
                                 <option defaultValue>Feet</option>
@@ -177,7 +177,7 @@ const UserSmall = (props) => {
                                 <option>9'</option>
                             </select>
                         </div>
-                        <div className='form-group col-sm-2'>
+                        <div className='form-group col-6'>
                             <br />
                             <select className='form-control' name='inch' id='inch' onChange={e => setInch(e.target.value)}>
                                 <option defaultValue>Inches</option>
@@ -232,7 +232,7 @@ const UserSmall = (props) => {
                             {!submit ? '' : address2.length > 40 ? <div style={{ color: '#D43434', marginTop: 3 }}>Address 2 length must be under 40 characters</div> : !address2Check ? <div style={{ color: '#D43434', marginTop: 3 }}>Address 2 must only contain alpha numeric characters</div> : ''}
                         </div>
                     </div>
-                    <div className='row' style={groupStyle}>
+                    <div className='row' style={groupStyle} >
                         <div className='form-group col-sm-5' >
                             <label><b>City <span style={{ color: '#D43434' }}>*</span></b></label>
                             <input type='text' className='form-control' name='city' id='city' onChange={e => {
@@ -246,7 +246,7 @@ const UserSmall = (props) => {
                             }} style={!submit ? {} : !cityCheck ? { borderColor: '#D43434' } : { borderColor: 'green' }} />
                             {!submit ? '' : city.length < 1 ? <div style={{ color: '#D43434', marginTop: 3 }}>Required*</div> : !cityCheck ? <div style={{ color: '#D43434', marginTop: 3 }}>Please enter a valid city</div> : ''}
                         </div>
-                        <div className='form-group col-sm-3'>
+                        <div className='form-group col-6' style={{ marginTop: 15 }}>
                             <label><b>State <span style={{ color: '#D43434' }}>*</span></b></label>
                             <select className='form-control' name='state' id='state' onChange={e => {
                                 const test = e.target.value
@@ -263,7 +263,7 @@ const UserSmall = (props) => {
                             </select>
                             {!submit ? '' : !stateCheck ? <div style={{ color: '#D43434', marginTop: 3 }}>Required*</div> : ''}
                         </div>
-                        <div className='form-group col-sm-2' >
+                        <div className='form-group col-6' style={{ marginTop: 15 }}>
                             <label><b>Zip <span style={{ color: '#D43434' }}>*</span></b></label>
                             <input type='text' className='form-control' name='zip' id='zip' onChange={e => {
                                 const test = e.target.value
@@ -277,7 +277,7 @@ const UserSmall = (props) => {
                             {!submit ? '' : zip.length < 1 ? <div style={{ color: '#D43434', marginTop: 3 }}>Required*</div> : !zipCheck ? <div style={{ color: '#D43434', marginTop: 3, width: 200 }}>Please enter a valid zip</div> : ''}
                         </div>
                         <div className='row' style={groupStyle}>
-                            <div className='form-group col-sm-4' >
+                            <div className='form-group col-sm-2' >
                                 <label><b>Email <span style={{ color: '#D43434' }}>*</span></b></label>
                                 <input type='text' className='form-control' name='email' id='email' placeholder='Email' onChange={e => {
                                     const tester = e.target.value
@@ -292,7 +292,7 @@ const UserSmall = (props) => {
                             </div>
                         </div>
                         <div className='row' style={groupStyle}>
-                            <div className='form-group col-3'>
+                            <div className='form-group col-7'>
                                 <label><b>Phone Number</b></label>
                                 <input type='text' className='form-control' name='phone' id='phone' placeholder='(XXX)-XXX-XXXX' onChange={e => {
                                     const test = e.target.value
@@ -389,7 +389,7 @@ const UserSmall = (props) => {
                 </div>
                 <br />
                 <div style={userStyle}>
-                    <h5>Your Monthly Budget for Services <span style={{ color: '#D43434' }}>*</span></h5>
+                    <h5>Your Monthly Budget for Services<span style={{ color: '#D43434' }}>*</span></h5>
                     {!submit ? '' : !budgetCheck ? <div style={{ color: '#D43434', marginTop: 3 }}>This question is required*</div> : ''}
                     <div className='form-check' style={{ marginLeft: 30 }}>
                         <input className='form-check-input' name='budget' type='radio' onChange={e => {
