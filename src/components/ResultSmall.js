@@ -31,12 +31,12 @@ const ResultSmall = (props) => {
                 <hr style={{ marginLeft: 50, marginRight: 50 }} />
 
                 <div style={userStyle}>
-                    
-                        {props.submit[1] ? <Card item={props.submit[1]} thing='Last Name' /> : ""}
-                        {props.submit[2] ? <Card item={props.submit[2]} thing='First Name' /> : ""}
-                        {props.submit[3] ? <Card item={props.submit[3]} thing='Title' /> : ""}
-                        {props.submit[4] ? <Card item={props.submit[4]} thing='Height (Feet)' /> : ""}
-                        {props.submit[5] ? <Card item={props.submit[5]} thing='Height (Inches)' /> : ""}
+
+                    {props.submit[1] ? <Card item={props.submit[1]} thing='Last Name' /> : ""}
+                    {props.submit[2] ? <Card item={props.submit[2]} thing='First Name' /> : ""}
+                    {props.submit[3] ? <Card item={props.submit[3]} thing='Title' /> : ""}
+                    {props.submit[4] ? <Card item={props.submit[4]} thing='Height (Feet)' /> : ""}
+                    {props.submit[5] ? <Card item={props.submit[5]} thing='Height (Inches)' /> : ""}
 
                 </div>
 
@@ -45,24 +45,24 @@ const ResultSmall = (props) => {
                 <hr style={{ marginLeft: 50, marginRight: 50 }} />
 
                 <div style={userStyle}>
-                    <div style={{ display: 'flex' }}>
-                        <div>
-                            {props.submit[8] ? <Card item={props.submit[8]} thing='Address' /> : ""}
-                            {props.submit[9] ? <Card item={props.submit[9]} thing='Second Address' /> : ""}
-                            {props.submit[10] ? <Card item={props.submit[10]} thing='City' /> : ""}
-                            {props.submit[11] ? <Card item={props.submit[11]} thing='State' /> : ""}
-                            {props.submit[12] ? <Card item={props.submit[12]} thing='Zip' /> : ""}
-                            {props.submit[6] ? <Card item={props.submit[6]} thing='Email' /> : ""}
-                            {props.submit[7] ? <Card item={props.submit[7]} thing='Phone Number' /> : ""}
-                        </div>
-                            <div style={{marginLeft:75,marginTop:15,width: '325px', height: '325px',overflow:'-moz-hidden-unscrollable'}}>
-                                <MapForResult />
-                            </div>
-                            
 
-                        
-
+                    <div>
+                        {props.submit[8] ? <Card item={props.submit[8]} thing='Address' /> : ""}
+                        {props.submit[9] ? <Card item={props.submit[9]} thing='Second Address' /> : ""}
+                        {props.submit[10] ? <Card item={props.submit[10]} thing='City' /> : ""}
+                        {props.submit[11] ? <Card item={props.submit[11]} thing='State' /> : ""}
+                        {props.submit[12] ? <Card item={props.submit[12]} thing='Zip' /> : ""}
+                        {props.submit[6] ? <Card item={props.submit[6]} thing='Email' /> : ""}
+                        {props.submit[7] ? <Card item={props.submit[7]} thing='Phone Number' /> : ""}
                     </div>
+                    <div style={{ marginTop: 15, width: '325px', height: '325px', }}>
+                        <MapForResult />
+                    </div>
+
+
+
+
+
 
                 </div>
                 <br />
