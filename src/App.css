@@ -1,5 +1,7 @@
 .App {
-  background-color: #FFC9C9;
-  min-height: 100vh;
+  background-color: #ffe6e6;
+
   display: flex;
+  /* width:100%; */
+  justify-content: center;
 }

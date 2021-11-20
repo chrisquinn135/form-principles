@@ -7,11 +7,10 @@ import ReCaptchaV2 from 'react-google-recaptcha'
 import result from '../redux/action/resultAction'
 import { Button } from 'react-bootstrap'
 
-const User = (props) => {
+const UserSmall = (props) => {
     const userStyle = {
-        width: 700,
         backgroundColor: 'white',
-        margin: "auto",
+        margin: "30px",
     }
 
     const groupStyle = {
@@ -93,7 +92,7 @@ const User = (props) => {
     return (
         <form style={{ marginTop: 10 }}>
             <div style={{ background: 'white', paddingTop: 25, paddingBottom: 50 }}>
-                <div style={{ width: 700, margin: "auto", }}>
+                <div style={{ marginLeft:50,marginRight:50, }}>
                     {error ? <div className='row' style={{ marginTop: 15, backgroundColor: '#D43434', padding: 20, color: 'white' }}>
                         Sorry, something went wrong. Please check the form for errors, correct them, and submit again
                     </div> : ''}
@@ -105,9 +104,9 @@ const User = (props) => {
                 <div style={userStyle}>
 
 
-                    <div className='row' style={{ marginTop: 15 }}>
-                        <div className='form-group col-md-6'>
-                            <label><b>Name <span style={{ color: '#D43434' }}>*</span></b></label>
+                    <div className='row' style={{marginTop: 15 }}>
+                        <div className='form-group'>
+                            <label><b> Last Name <span style={{ color: '#D43434' }}>*</span></b></label>
                             <div>
                                 <input type='text' className='form-control' id='last-name' placeholder='Last Name' onChange={e => {
                                     const test = e.target.value
@@ -120,10 +119,12 @@ const User = (props) => {
                                 }}
                                     style={!submit ? {} : lnCheck ? { marginTop: 5, borderColor: 'green' } : { marginTop: 5, borderColor: '#D43434' }} />
                             </div>
-                            {!submit ? <label style={{ fontSize: 13 }}>Last</label> : lnCheck ? <label style={{ fontSize: 13 }}>Last</label> : lastName.length >= 41 ? <div style={{ color: '#D43434', marginTop: 3 }}>Last name must be under 40 letters</div> : !lastName ? <div style={{ color: '#D43434', marginTop: 3 }}>Required*</div> : /^[A-Za-z]+$/.test(lastName) ? <label style={{ fontSize: 13 }}>Last</label> : <div style={{ color: '#D43434', marginTop: 3 }}>Last name must contain alphabetical characters</div>}
+                            {!submit ? '' : lnCheck ? '' : lastName.length >= 41 ? <div style={{ color: '#D43434', marginTop: 3 }}>Last name must be under 40 letters</div> : !lastName ? <div style={{ color: '#D43434', marginTop: 3 }}>Required*</div> : /^[A-Za-z]+$/.test(lastName) ? <label style={{ fontSize: 13 }}>Last</label> : <div style={{ color: '#D43434', marginTop: 3 }}>Last name must contain alphabetical characters</div>}
                         </div>
-                        <div className='form-group col-md-6'>
-                            <label></label>
+                    </div>
+                    <div className='row' style={{ marginTop: 15 }}>
+                        <div className='form-group'>
+                            <label><b> First Name <span style={{ color: '#D43434' }}>*</span></b></label>
                             <input type='text' className='form-control' id='first-name' placeholder='First Name' onChange={e => {
                                 const test = e.target.value
                                 setFirstName(e.target.value)
@@ -134,8 +135,7 @@ const User = (props) => {
                                 }
                             }}
                                 style={!submit ? {} : fnCheck ? { marginTop: 5, borderColor: 'green' } : { marginTop: 5, borderColor: '#D43434' }} />
-                            {!submit ? <label style={{ fontSize: 13 }}>First</label> : fnCheck ? <label style={{ fontSize: 13 }}>First</label> : firstName.length >= 41 ? <div style={{ color: '#D43434', marginTop: 3 }}>First name must be under 40 letters</div> : !firstName ? <div style={{ color: '#D43434', marginTop: 3 }}>Required*</div> : /^[A-Za-z]+$/.test(firstName) ? <label style={{ fontSize: 13 }}>First</label> : <div style={{ color: '#D43434', marginTop: 3 }}>First name contain use alphabetical characters</div>}                        </div>
-
+                            {!submit ? '' : fnCheck ? '' : firstName.length >= 41 ? <div style={{ color: '#D43434', marginTop: 3 }}>First name must be under 40 letters</div> : !firstName ? <div style={{ color: '#D43434', marginTop: 3 }}>Required*</div> : /^[A-Za-z]+$/.test(firstName) ? <label style={{ fontSize: 13 }}>First</label> : <div style={{ color: '#D43434', marginTop: 3 }}>First name contain use alphabetical characters</div>}                        </div>
                     </div>
                     <div className='row' style={{ marginTop: 10 }}>
                         <div className='form-group col-md-3'>
@@ -233,7 +233,7 @@ const User = (props) => {
                         </div>
                     </div>
                     <div className='row' style={groupStyle}>
-                        <div className='form-group col-md-5'>
+                        <div className='form-group col-sm-5' >
                             <label><b>City <span style={{ color: '#D43434' }}>*</span></b></label>
                             <input type='text' className='form-control' name='city' id='city' onChange={e => {
                                 const test = e.target.value
@@ -263,7 +263,7 @@ const User = (props) => {
                             </select>
                             {!submit ? '' : !stateCheck ? <div style={{ color: '#D43434', marginTop: 3 }}>Required*</div> : ''}
                         </div>
-                        <div className='form-group col-md-2'>
+                        <div className='form-group col-sm-2' >
                             <label><b>Zip <span style={{ color: '#D43434' }}>*</span></b></label>
                             <input type='text' className='form-control' name='zip' id='zip' onChange={e => {
                                 const test = e.target.value
@@ -277,7 +277,7 @@ const User = (props) => {
                             {!submit ? '' : zip.length < 1 ? <div style={{ color: '#D43434', marginTop: 3 }}>Required*</div> : !zipCheck ? <div style={{ color: '#D43434', marginTop: 3, width: 200 }}>Please enter a valid zip</div> : ''}
                         </div>
                         <div className='row' style={groupStyle}>
-                            <div className='form-group col-10'>
+                            <div className='form-group col-sm-4' >
                                 <label><b>Email <span style={{ color: '#D43434' }}>*</span></b></label>
                                 <input type='text' className='form-control' name='email' id='email' placeholder='Email' onChange={e => {
                                     const tester = e.target.value
@@ -292,7 +292,7 @@ const User = (props) => {
                             </div>
                         </div>
                         <div className='row' style={groupStyle}>
-                            <div className='form-group col-4'>
+                            <div className='form-group col-3'>
                                 <label><b>Phone Number</b></label>
                                 <input type='text' className='form-control' name='phone' id='phone' placeholder='(XXX)-XXX-XXXX' onChange={e => {
                                     const test = e.target.value
@@ -439,4 +439,4 @@ const User = (props) => {
     )
 }
 
-export default User
+export default UserSmall

@@ -1,28 +1,72 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
+import Confirm from './Confirm'
 import User from './User'
+import UserSmall from './UserSmall'
+import Result from './Result'
+import { connect } from 'react-redux'
+import ResultSmall from './ResultSmall'
+import MapForResult from './MapForResult'
 
 
 const Survey = () => {
 
+
+    const [small, setSmall] = useState(false)
+    React.useEffect(() => {
+        function handleResize() {
+            if(window.innerWidth < 800) {
+                setSmall(true);
+                console.log('SMALL')
+            } else {
+                setSmall(false)
+                console.log("LARGE")
+            }
+        }
+
+        window.addEventListener('resize', handleResize)
+    })
+
     const surveyStyle = {
-        margin: 'auto',
+        
         marginTop: '50px',
-        width: "825px",
-        left: '308px',
+        width: "800px",
+        
         // top: '54px',
         // background: 'white',    //background: '#FFF0F0',
         // boxShadow: '0px 4px 30px rgba(0, 0, 0, 0.25)'
     }
 
-    return (
-        <div style={surveyStyle}>
-            <Header />
+    const smallStyle = {
+        marginTop: '50px',
+        width: "100%",
 
-            <User />
+        // top: '54px',
+        // background: 'white',    //background: '#FFF0F0',
+        // boxShadow: '0px 4px 30px rgba(0, 0, 0, 0.25)'
+    }
+
+
+    const [formSub, setFormSub] = useState(false)
+
+    const onSubmit = () => {
+        setFormSub(true);
+    }
+
+    return (
+        <div style={small ? smallStyle : surveyStyle}>
+            {!formSub ? <Header /> : <Confirm />}
+            {/* {props.submit.map((item) => item)} */}
+            {!formSub ? small ? <UserSmall onSubmit={onSubmit} /> : <User onSubmit={onSubmit} /> : small ? <ResultSmall /> :<Result />}
 
         </div>
     )
 }
 
-export default Survey
+const mapStateToProps = (state) => {
+    return {
+        submit: state.results
+    }
+}
+
+export default connect(mapStateToProps)(Survey)

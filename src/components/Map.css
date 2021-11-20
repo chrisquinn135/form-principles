@@ -1,0 +1,10 @@
+.MAP {
+    display: block;
+    max-width: 30%;
+    max-height: 30%;
+    overflow: hidden;
+}
+
+.x-map {
+	margin-bottom: 0 !important;
+}

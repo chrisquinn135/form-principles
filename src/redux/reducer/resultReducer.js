@@ -1,4 +1,5 @@
 const INITIAL_STATE = {
+    item: '157 parkview avenue, daly city, california',
     results: []
 }
 
